@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 
-const PROFILE_IMG = '/images/profile.jpg';
+const PROFILE_IMG = '/images/profile.jpeg';
 
 const ROLES = [
   'Desarrollador de Software',

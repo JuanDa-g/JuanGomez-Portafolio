@@ -10,7 +10,7 @@ const ALL_PROJECTS = [
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
     color: '#6366f1',
     image: '/images/projects/perfumeria-sg.png',
-    link: '#',
+    link: 'https://github.com/JuanDa-g/Perfumeria-sg',
     github: 'https://github.com/JuanDa-g/Perfumeria-sg',
   },
   {
@@ -21,8 +21,8 @@ const ALL_PROJECTS = [
     tags: ['React', 'JavaScript', 'Supabase (PostgreSQL)', 'CSS'],
     color: '#06b6d4',
     image: '/images/projects/busgo.png',
-    link: '#',
-    github: '#',
+    link: 'https://bus-go-nine.vercel.app/',
+    github: 'https://github.com/JuanDa-g/BusGo',
   },
   {
     id: 3,
@@ -43,8 +43,8 @@ const ALL_PROJECTS = [
     tags: ['HTML', 'JavaScript', 'WebSockets', 'Apps Script', 'Wompi','Brevo'],
     color: '#10b981',
     image: '/images/projects/san-pedro-corre.png',
-    link: '#',
-    github: '#',
+    link: 'https://corresanpedro.vercel.app/',
+    github: 'https://github.com/JuanDa-g/corresanpedro',
   },
   {
     id: 5,
@@ -54,8 +54,8 @@ const ALL_PROJECTS = [
     tags: ['HTML', 'JavaScript','API REST','CSS', 'Figma','Postman'],
     color: '#ec4899',
     emoji: '🗓️',
-    link: '#',
-    github: '#',
+    link: 'https://github.com/JuanDa-g/Sistemas-de-Reservas',
+    github: 'https://github.com/JuanDa-g/Sistemas-de-Reservas',
   },
   {
     id: 6,
@@ -65,8 +65,8 @@ const ALL_PROJECTS = [
     tags: ['Node.js', 'Express', 'Supabase (PostgreSQL)', 'Groq (IA)'],
     color: '#6366f1',
     emoji: '⚙️',
-    link: '#',
-    github: '#',
+    link: 'https://github.com/JuanDa-g/backend-buses',
+    github: 'https://github.com/JuanDa-g/backend-buses',
   },
 ];
 
