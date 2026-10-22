@@ -1,5 +1,31 @@
 import './About.css';
 
+/* SVG icons for value cards — inline, monochrome, sized via CSS */
+const IconTarget = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+  </svg>
+);
+const IconSearch = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+  </svg>
+);
+const IconRocket = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+  </svg>
+);
+const IconHandshake = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l1.71 1.71"/>
+    <path d="m2 2 20 20"/><path d="M8.35 8.35 6 11l2 2a1 1 0 1 0 3-3"/>
+  </svg>
+);
+
 const TIMELINE = [
   {
     year: '2025 – Actualidad',
@@ -16,10 +42,10 @@ const TIMELINE = [
 ];
 
 const VALUES = [
-  { icon: '🎯', title: 'Orientado a resultados', desc: 'Entrego soluciones que generan impacto real.' },
-  { icon: '🔍', title: 'Atención al detalle', desc: 'El 1% extra marca la diferencia entre bueno y excelente.' },
-  { icon: '🚀', title: 'Aprendizaje continuo', desc: 'Me mantengo al día con las últimas tecnologías.' },
-  { icon: '🤝', title: 'Trabajo en equipo', desc: 'Creo que los mejores resultados nacen de la colaboración.' },
+  { icon: <IconTarget />, title: 'Orientado a resultados', desc: 'Entrego soluciones que generan impacto real.' },
+  { icon: <IconSearch />,  title: 'Atención al detalle',   desc: 'El 1% extra marca la diferencia entre bueno y excelente.' },
+  { icon: <IconRocket />,  title: 'Aprendizaje continuo',  desc: 'Me mantengo al día con las últimas tecnologías.' },
+  { icon: <IconHandshake />, title: 'Trabajo en equipo',  desc: 'Creo que los mejores resultados nacen de la colaboración.' },
 ];
 
 export default function About() {

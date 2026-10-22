@@ -53,7 +53,28 @@
   border-color: var(--color-border-hover);
   transform: translateX(4px);
 }
-.about__value-icon { font-size: 1.5rem; flex-shrink: 0; }
+.about__value-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  color: var(--color-primary-light);
+  transition: var(--transition);
+}
+.about__value-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.about__value-card:hover .about__value-icon {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: var(--color-border-hover);
+  color: #fff;
+}
 .about__value-title {
   font-size: 0.95rem;
   font-weight: 600;
