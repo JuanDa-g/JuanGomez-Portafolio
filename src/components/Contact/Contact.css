@@ -195,7 +195,29 @@ a.contact__item-value:hover {
   color: #10b981;
   text-align: center;
   padding: 0.5rem;
-  animation: fadeIn 0.4s ease;
+  animation: msgFadeInOut 4s ease forwards;
+}
+
+.contact__error {
+  font-size: 0.87rem;
+  color: #f87171;
+  text-align: center;
+  padding: 0.5rem;
+  animation: msgFadeInOut 4s ease forwards;
+  line-height: 1.5;
+}
+
+.contact__error a {
+  color: #fca5a5;
+  text-decoration: underline;
+}
+
+/* Aparece suave y desaparece en los últimos 0.6s */
+@keyframes msgFadeInOut {
+  0%   { opacity: 0; transform: translateY(4px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @media (max-width: 900px) {

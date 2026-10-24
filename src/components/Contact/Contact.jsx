@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const CONTACT_INFO = [
@@ -49,20 +50,41 @@ const CONTACT_INFO = [
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState(null); // null | 'sending' | 'success' | 'error'
+
+  useEffect(() => {
+    if (status === 'success' || status === 'error') {
+      const timer = setTimeout(() => setStatus(null), 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    // Simulate async send
-    setTimeout(() => {
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name:  formData.name,
+          from_email: formData.email,
+          subject:    formData.subject,
+          message:    formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setStatus('error');
+    }
   };
 
   return (
@@ -96,12 +118,6 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Availability chip */}
-            <div className="contact__availability">
-              <span className="contact__availability-dot" aria-hidden="true" />
-              Disponible para nuevas oportunidades
             </div>
           </div>
 
@@ -180,7 +196,14 @@ export default function Contact() {
 
             {status === 'success' && (
               <p className="contact__success" role="status">
-                ✅ ¡Mensaje enviado! Te responderé pronto.
+                ¡Mensaje enviado! Te responderé pronto.
+              </p>
+            )}
+
+            {status === 'error' && (
+              <p className="contact__error" role="alert">
+                No se pudo enviar el mensaje. Intenta de nuevo o escríbeme directamente a{' '}
+                <a href="mailto:jg4140237@gmail.com">jg4140237@gmail.com</a>
               </p>
             )}
           </form>

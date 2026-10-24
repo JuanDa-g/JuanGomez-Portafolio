@@ -67,7 +67,25 @@
   margin-bottom: 0.75rem;
 }
 
-.skill-card__icon { font-size: 1.2rem; }
+/* Tech logo container */
+.skill-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  /* Subtle bg so transparent logos are legible on dark cards */
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.skill-card__logo svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
 
 .skill-card__name {
   font-size: 0.95rem;
