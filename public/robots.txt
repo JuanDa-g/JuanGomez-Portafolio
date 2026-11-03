@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://juan-gomez-portafolio.vercel.app/sitemap.xml
